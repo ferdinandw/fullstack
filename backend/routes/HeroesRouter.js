@@ -1,0 +1,12 @@
+const express = require('express')
+const router = express.Router()
+
+const HeroesContainer = require('../containers/HeroesContainer')
+
+router.post('/post', HeroesContainer.create)
+router.get('/get', HeroesContainer.getAllData)
+router.get('/get/:heroesId', HeroesContainer.getDatabyId)
+router.delete('/delete/:heroesId', HeroesContainer.deleteById)
+router.put('/edit/:heroesId', HeroesContainer.editById)
+
+module.exports = router
